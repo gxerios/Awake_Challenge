@@ -1,0 +1,45 @@
+[0.429s] Invoking command in '/home/gelonch/Documents/ROS2-WRK/awake/f1tenth/src/f1tenth_gym_ros': PYTHONPATH=/home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/f1tenth_gym_ros build --build-base /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/build install --record /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/install.log --single-version-externally-managed install_data
+[0.591s] running egg_info
+[0.591s] creating ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info
+[0.591s] writing ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/PKG-INFO
+[0.592s] writing dependency_links to ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/dependency_links.txt
+[0.592s] writing entry points to ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/entry_points.txt
+[0.592s] writing requirements to ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/requires.txt
+[0.592s] writing top-level names to ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/top_level.txt
+[0.592s] writing manifest file '../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/SOURCES.txt'
+[0.593s] reading manifest file '../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/SOURCES.txt'
+[0.593s] adding license file 'LICENSE'
+[0.594s] writing manifest file '../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/SOURCES.txt'
+[0.594s] running build
+[0.594s] running build_py
+[0.594s] creating /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/build
+[0.594s] creating /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/build/lib
+[0.594s] creating /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/build/lib/f1tenth_gym_ros
+[0.594s] copying f1tenth_gym_ros/gym_bridge.py -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/build/lib/f1tenth_gym_ros
+[0.595s] copying f1tenth_gym_ros/__init__.py -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/build/lib/f1tenth_gym_ros
+[0.595s] running install
+[0.595s] running install_lib
+[0.596s] creating /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/python3.10/site-packages/f1tenth_gym_ros
+[0.596s] copying /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/build/lib/f1tenth_gym_ros/gym_bridge.py -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/python3.10/site-packages/f1tenth_gym_ros
+[0.596s] copying /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/build/lib/f1tenth_gym_ros/__init__.py -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/python3.10/site-packages/f1tenth_gym_ros
+[0.596s] byte-compiling /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/python3.10/site-packages/f1tenth_gym_ros/gym_bridge.py to gym_bridge.cpython-310.pyc
+[0.598s] byte-compiling /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/python3.10/site-packages/f1tenth_gym_ros/__init__.py to __init__.cpython-310.pyc
+[0.599s] running install_data
+[0.599s] creating /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/ament_index
+[0.599s] creating /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/ament_index/resource_index
+[0.599s] creating /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/ament_index/resource_index/packages
+[0.599s] copying resource/f1tenth_gym_ros -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/ament_index/resource_index/packages
+[0.599s] copying package.xml -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/f1tenth_gym_ros
+[0.599s] creating /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/f1tenth_gym_ros/launch
+[0.599s] copying launch/gym_bridge_launch.py -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/f1tenth_gym_ros/launch
+[0.599s] copying launch/ego_racecar.xacro -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/f1tenth_gym_ros/launch
+[0.599s] copying launch/opp_racecar.xacro -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/f1tenth_gym_ros/launch
+[0.599s] copying launch/gym_bridge.rviz -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/f1tenth_gym_ros/launch
+[0.600s] creating /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/f1tenth_gym_ros/config
+[0.600s] copying config/sim.yaml -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/f1tenth_gym_ros/config
+[0.600s] running install_egg_info
+[0.601s] Copying ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info to /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/python3.10/site-packages/f1tenth_gym_ros-0.0.0-py3.10.egg-info
+[0.602s] running install_scripts
+[0.616s] Installing gym_bridge script to /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/f1tenth_gym_ros
+[0.616s] writing list of installed files to '/home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/install.log'
+[0.632s] Invoked command in '/home/gelonch/Documents/ROS2-WRK/awake/f1tenth/src/f1tenth_gym_ros' returned '0': PYTHONPATH=/home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/f1tenth_gym_ros build --build-base /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/build install --record /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/install.log --single-version-externally-managed install_data

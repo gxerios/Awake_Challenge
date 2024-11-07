@@ -1,0 +1,21 @@
+running egg_info
+writing ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/PKG-INFO
+writing dependency_links to ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/dependency_links.txt
+writing entry points to ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/entry_points.txt
+writing requirements to ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/requires.txt
+writing top-level names to ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/top_level.txt
+reading manifest file '../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying config/sim.yaml -> /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/share/f1tenth_gym_ros/config
+running install_egg_info
+removing '/home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/python3.10/site-packages/f1tenth_gym_ros-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/f1tenth_gym_ros/f1tenth_gym_ros.egg-info to /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/python3.10/site-packages/f1tenth_gym_ros-0.0.0-py3.10.egg-info
+running install_scripts
+Installing gym_bridge script to /home/gelonch/Documents/ROS2-WRK/awake/f1tenth/install/f1tenth_gym_ros/lib/f1tenth_gym_ros
+writing list of installed files to '/home/gelonch/Documents/ROS2-WRK/awake/f1tenth/build/f1tenth_gym_ros/install.log'

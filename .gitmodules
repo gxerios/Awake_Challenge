@@ -1,0 +1,3 @@
+[submodule "pathing_method"]
+	path = pathing_method
+	url = https://github.com/f1tenth/ESweek2021_educationclassA3.git

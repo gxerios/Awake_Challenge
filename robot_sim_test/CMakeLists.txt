@@ -15,7 +15,6 @@ find_package(ament_cmake REQUIRED)
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME}/)
 install(DIRECTORY config DESTINATION share/${PROJECT_NAME}/)
 install(DIRECTORY world DESTINATION share/${PROJECT_NAME}/)
-install(DIRECTORY models DESTINATION share/${PROJECT_NAME}/)
 install(DIRECTORY xacro DESTINATION share/${PROJECT_NAME}/)
 
 # Installe les fichiers .yaml, .dae, etc.

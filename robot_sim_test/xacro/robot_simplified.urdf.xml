@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<robot name="four_wheels">
+  
+  <!-- This is the base of the robot -->
+  <link name="base_footprint"/>
+  
+  <!-- This is the body of the robot -->
+  <link name="base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.4 0.25 0.1"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>    
+  </link>
+  
+  <joint name="base_joint" type="fixed">
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.09"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
+  </joint>
+
+  <!-- Define the rear right wheel -->
+  <joint name="rear_right_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_right_link"/>
+    <origin rpy="0 0 0" xyz="-0.12 -0.139 -0.030000000000000002"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  
+  <link name="rear_right_link">
+    <visual>
+      <origin rpy="1.570795 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.028" radius="0.06"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>    
+  </link>
+
+  <!-- Define the rear left wheel -->
+  <joint name="rear_left_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_left_link"/>
+    <origin rpy="0 0 0" xyz="0.12 -0.139 -0.030000000000000002"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="rear_left_link">    
+    <visual>
+      <origin rpy="1.570795 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.028" radius="0.06"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Define the front right wheel -->
+  <joint name="front_right_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_right_link"/>
+    <origin rpy="0 0 0" xyz="-0.12 0.139 -0.030000000000000002"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="front_right_link">    
+    <visual>
+      <origin rpy="1.570795 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.028" radius="0.06"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Define the front left wheel -->
+  <joint name="front_left_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_left_link"/>
+    <origin rpy="0 0 0" xyz="0.12 0.139 -0.030000000000000002"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="front_left_link">
+    <visual>
+      <origin rpy="1.570795 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.028" radius="0.06"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <!-- Define the laser -->
+  <joint name="laser_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_link"/>
+    <origin rpy="0 0 0" xyz="0.1 0 0.07"/>
+  </joint>
+
+  <link name="laser_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.04" radius="0.05"/>
+      </geometry>
+      <material name="red"/>
+    </visual>    
+  </link>
+  
+</robot>

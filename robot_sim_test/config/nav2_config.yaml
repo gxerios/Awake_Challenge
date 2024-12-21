@@ -1,0 +1,64 @@
+amcl:
+  ros__parameters:
+    use_sim_time: true
+    min_particles: 500
+    max_particles: 2000
+    odom_frame_id: odom
+    base_frame_id: base_link
+    global_frame_id: map
+    laser_model_type: "likelihood_field"
+    update_min_d: 0.2
+    update_min_a: 0.2
+    transform_tolerance: 1.0
+    scan_topic: /scan
+
+controller_server:
+  ros__parameters:
+    use_sim_time: true
+    controller_frequency: 20.0
+    max_vel_x: 0.5
+    min_vel_x: 0.0
+    max_vel_theta: 1.0
+    min_vel_theta: -1.0
+    yaw_goal_tolerance: 0.1
+    xy_goal_tolerance: 0.2
+    path_tolerance: 0.5
+    goal_tolerance: 0.2
+    critics:
+      - type: "PathCritic"
+        # D'autres paramètres pour le PathCritic
+      - type: "GoalCritic"
+        # D'autres paramètres pour le GoalCritic
+    robot_base_frame: base_link
+
+planner_server:
+  ros__parameters:
+    use_sim_time: true
+    planner_frequency: 1.0
+    max_planner_retries: 5
+    planner_patience: 5.0
+    default_planner_timeout: 15.0
+    planner_plugin: "nav2_navfn_planner/NavfnPlanner"
+
+costmap:
+  global_costmap:
+    ros__parameters:
+      update_frequency: 2.0
+      publish_frequency: 1.0
+      width: 10.0
+      height: 10.0
+      resolution: 0.05
+      static_map: true
+      rolling_window: true
+      transform_tolerance: 1.0
+
+  local_costmap:
+    ros__parameters:
+      update_frequency: 2.0
+      publish_frequency: 1.0
+      width: 5.0
+      height: 5.0
+      resolution: 0.05
+      static_map: false
+      rolling_window: true
+      transform_tolerance: 1.0

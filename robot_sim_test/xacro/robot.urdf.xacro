@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!-- http://wiki.ros.org/urdf/XML/link  -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="four_wheels">
+
+    <!-- Define constants -->
+    <xacro:property name="pi" value="1.570795"/>
+
+    <xacro:property name="base_mass" value="1.0"/>
+    <xacro:property name="base_length" value="0.4"/>
+    <xacro:property name="base_width" value="0.20"/>
+    <xacro:property name="base_height" value="0.05"/>
+    <xacro:property name="base_wheel_distance" value="0.02"/>
+
+    <xacro:property name="wheel_mass" value="0.1"/>
+    <xacro:property name="wheel_separation" value="${base_width + wheel_length}"/>
+    <xacro:property name="wheel_radius" value="0.03"/>
+    <xacro:property name="wheel_length" value="0.03"/>    
+
+    <xacro:property name="laser_mass" value="0.1"/>
+    <xacro:property name="laser_radius" value="0.05"/>
+    <xacro:property name="laser_length" value="0.04"/>
+    <xacro:property name="laser_distance_z" value="${base_height/2 + laser_length/2}"/>
+    <xacro:property name="laser_distance_x" value="0.1"/>
+
+    
+    <!-- Include the common gazebo macros -->
+    <xacro:include filename="$(find skid_steer_robot)/urdf/common_gazebo.xacro" />
+    <xacro:include filename="$(find skid_steer_robot)/urdf/inertial_macro.xacro" />
+     
+    <!-- This is the base of the robot -->
+    <link name="base_footprint"/>
+    
+    <!-- This is the body of the robot -->    
+    <link name="base_link">
+        <xacro:inertial_box mass="${base_mass}" x="${base_length}" y="${base_width}" z="${base_height}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_box>
+        <visual>  
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="${base_length} ${base_width} ${base_height}" />
+            </geometry>
+             
+            <material name="blue">
+                <color rgba="0 0 1 1"/>
+            </material>         
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="${base_length} ${base_width} ${base_height}" />
+            </geometry>
+        </collision>
+    </link>
+     
+    
+    <joint name="base_joint" type="fixed">
+        <origin xyz="0.0 0.0 ${base_height/2 - base_wheel_distance + wheel_radius}" rpy="0.0 0.0 0.0"/>
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+
+    <!-- Define the wheel macro -->
+    <xacro:macro name="wheel" params="name x y z">
+        <joint name="${name}_joint" type="continuous" >
+            <parent link="base_link"/>
+            <child  link="${name}_link" />
+            <origin xyz="${x} ${y} ${z}" rpy="0 0 0" />
+            <axis xyz="0 1 0"/>
+        </joint>
+        <link name="${name}_link">
+            <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_length}" radius="${wheel_radius}">
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+            </xacro:inertial_cylinder>
+            <visual>
+                <origin rpy="${pi} 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+                </geometry>
+                
+                <material name="black">
+                    <color rgba="0 0 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin rpy="${pi} 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+
+    <xacro:wheel name="rear_right" x="${-base_length * 0.3}" y="${-base_width/2 - wheel_length/2}" z="${base_wheel_distance - base_height/2}"/>
+    <xacro:wheel name="rear_left"  x="${-base_length * 0.3}" y="${base_width/2 + wheel_length/2}" z="${base_wheel_distance - base_height/2}"/>
+    <xacro:wheel name="front_right" x="${base_length * 0.3}" y="${-base_width/2 - wheel_length/2}" z="${base_wheel_distance - base_height/2}"/>
+    <xacro:wheel name="front_left" x="${base_length * 0.3}" y="${base_width/2 + wheel_length/2}" z="${base_wheel_distance - base_height/2}"/>
+     
+     
+    <!-- Include the skid steering drive plugin -->
+    <xacro:include filename="$(find skid_steer_robot)/urdf/skid_steering_drive_gazebo.xacro" />
+
+    <!-- Include the lidar -->
+    <xacro:include filename="$(find skid_steer_robot)/urdf/lidar.xacro" />
+ 
+</robot>
